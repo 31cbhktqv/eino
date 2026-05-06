@@ -75,6 +75,10 @@ eino/
 └── utils/          # Shared utilities
 ```
 
+## Personal Notes
+
+> I'm using this fork primarily to experiment with custom `Retriever` implementations and to explore how the graph execution engine handles cycles. See the `experiments/` branch for work-in-progress explorations.
+
 ## Contributing
 
 Please read our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) before submitting changes.
