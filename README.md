@@ -81,6 +81,8 @@ eino/
 > I'm using this fork primarily to experiment with custom `Retriever` implementations and to explore how the graph execution engine handles cycles. See the `experiments/` branch for work-in-progress explorations.
 >
 > **Current focus**: Building a `Retriever` backed by a local SQLite vector store using the `sqlite-vec` extension. Early results are promising for offline/edge use cases.
+>
+> **Next up**: Investigating whether the graph engine can be coaxed into supporting optional/conditional edges without breaking the type-safety guarantees. Opened a note in `experiments/conditional_edges.md`.
 
 ## Contributing
 
