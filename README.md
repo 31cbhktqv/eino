@@ -85,15 +85,9 @@ eino/
 > **Next up**: Investigating whether the graph engine can be coaxed into supporting optional/conditional edges without breaking the type-safety guarantees. Opened a note in `experiments/conditional_edges.md`.
 >
 > **Update (2025-01)**: The SQLite-backed retriever is working well for small corpora (~10k documents). Performance degrades noticeably above that — may need to look at chunking the index or switching to an ANN approach.
+>
+> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query step in the graph. Retrieval latency is acceptable again. Write-up in `experiments/sqlite_retriever_sharding.md`. Still evaluating [usearch](https://github.com/unum-cloud/usearch) as a potential ANN backend for larger corpora.
 
 ## Contributing
 
-Please read our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) before submitting changes.
-
-When reporting issues, use the appropriate template:
-- [Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)
-- [Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)
-
-## License
-
-This project is 
+Please read our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) bef
