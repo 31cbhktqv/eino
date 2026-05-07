@@ -72,12 +72,15 @@ eino/
 ├── schema/         # Core data types (Message, Document, etc.)
 ├── components/     # Component interfaces (ChatModel, Retriever, Tool, etc.)
 ├── callbacks/      # Callback/middleware system for observability
+├── experiments/    # Personal experiments (custom Retrievers, cycle handling)
 └── utils/          # Shared utilities
 ```
 
 ## Personal Notes
 
 > I'm using this fork primarily to experiment with custom `Retriever` implementations and to explore how the graph execution engine handles cycles. See the `experiments/` branch for work-in-progress explorations.
+>
+> **Current focus**: Building a `Retriever` backed by a local SQLite vector store using the `sqlite-vec` extension. Early results are promising for offline/edge use cases.
 
 ## Contributing
 
