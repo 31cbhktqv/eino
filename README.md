@@ -83,6 +83,8 @@ eino/
 > **Current focus**: Building a `Retriever` backed by a local SQLite vector store using the `sqlite-vec` extension. Early results are promising for offline/edge use cases.
 >
 > **Next up**: Investigating whether the graph engine can be coaxed into supporting optional/conditional edges without breaking the type-safety guarantees. Opened a note in `experiments/conditional_edges.md`.
+>
+> **Update (2025-01)**: The SQLite-backed retriever is working well for small corpora (~10k documents). Performance degrades noticeably above that — may need to look at chunking the index or switching to an ANN approach.
 
 ## Contributing
 
@@ -94,8 +96,4 @@ When reporting issues, use the appropriate template:
 
 ## License
 
-This project is licensed under the Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-
-This project is a fork of [cloudwego/eino](https://github.com/cloudwego/eino), originally developed by the CloudWeGo team at ByteDance.
+This project is 
