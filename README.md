@@ -86,8 +86,4 @@ eino/
 >
 > **Update (2025-01)**: The SQLite-backed retriever is working well for small corpora (~10k documents). Performance degrades noticeably above that — may need to look at chunking the index or switching to an ANN approach.
 >
-> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query step in the graph. Retrieval latency is acceptable again. Write-up in `experiments/sqlite_retriever_sharding.md`. Still evaluating [usearch](https://github.com/unum-cloud/usearch) as a potential ANN backend for larger corpora.
-
-## Contributing
-
-Please read our [Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) bef
+> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query — latency is acceptable (~120ms p95 on my laptop) but memory usage spikes during the merge step. May need a smarter merge strategy or lazy loading. Logging the shard query times individually to figure out where the bottleneck actually is.
