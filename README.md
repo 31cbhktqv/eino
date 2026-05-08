@@ -86,4 +86,4 @@ eino/
 >
 > **Update (2025-01)**: The SQLite-backed retriever is working well for small corpora (~10k documents). Performance degrades noticeably above that — may need to look at chunking the index or switching to an ANN approach.
 >
-> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query — latency is acceptable (~120ms p95 on my laptop) but memory usage spikes during the merge step. May need a smarter merge strategy or lazy loading. Logging the shard query times individually to figure out where the bottleneck actually is.
+> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query. Latency is acceptable (~40ms p95 on my laptop) but merging and re-ranking results across shards is messier than expected. Currently using a simple reciprocal rank fusion (RRF) strategy — good enough for now. Might revisit with a learned re-ranker later.
