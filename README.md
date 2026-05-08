@@ -86,4 +86,4 @@ eino/
 >
 > **Update (2025-01)**: The SQLite-backed retriever is working well for small corpora (~10k documents). Performance degrades noticeably above that — may need to look at chunking the index or switching to an ANN approach.
 >
-> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query — latency improved significantly (~40% reduction on p95). The merge step is a bit messy though; scores aren't directly comparable across shards without re-normalizing. Tracking this in `experiments/sqlite_retriever_sharding.md`.
+> **Update (2025-06)**: Tried chunking the index into 5k-document shards with a fan-out query pattern. Latency is acceptable (~120ms p95) but memory usage spikes during fan-out — each shard loads its own mmap'd index. Considering lazy loading or a shared index manager. Tracking this in `experiments/sqlite_retriever_sharding.md`.
